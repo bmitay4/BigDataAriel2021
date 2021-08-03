@@ -62,7 +62,7 @@ producer.on("ready", function (arg) {
 	async function load() {
 		for (var i = 1; ; i++) {
 			producer.produce(topic, -1, generateVehicle(i), i);
-			await timer(9000);
+			await timer(20000);
 		}
 	}
 	load();

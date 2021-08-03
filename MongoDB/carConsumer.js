@@ -36,7 +36,7 @@ function addCar(car) {
 		const collection = client.db("vehicles").collection("section_2");
 		collection.insertOne(car, function (err, res) {
 			if (err) throw err;
-			console.log("Car Inserted\n" + JSON.stringify(car));
+			console.log("Car Inserted: " + JSON.stringify(car));
 		});
 	});
 }
