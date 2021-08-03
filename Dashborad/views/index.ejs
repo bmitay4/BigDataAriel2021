@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Basic Page Info -->
+	<meta charset="utf-8">
+	<title>Route 7 Monitor System</title>
+
+	<!-- Site favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./styles/core.css">
+	<link rel="stylesheet" type="text/css" href="./styles/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="./src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="./src/plugins/datatables/css/responsive.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+	<link rel="stylesheet" type="text/css" href="./styles/assets/css/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/assets/icon/themify-icons/themify-icons.css">
+	<link rel="stylesheet" type="text/css" href="./styles/assets/icon/icofont/css/icofont.css">
+	<link rel="stylesheet" type="text/css" href="./styles/assets/css/jquery.mCustomScrollbar.css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="header-left">
+			<div class="header-search">
+				<h5 class="font-20 weight-500 mb-10 text-capitalize">
+					Route 7 - Highway Monitor System
+				</h5>
+			</div>
+		</div>
+		<div class="header-right">
+			<div class="dashboard-setting user-notification">
+				<a class="dropdown-toggle no-arrow" href="https://www.google.com/maps/" target="_blank">
+					<img src="./images/gmaps.png" alt="Google Maps">
+				</a>
+				<a class="dropdown-toggle no-arrow mr-2" href="https://www.waze.com/live-map/" target="_blank">
+					<img src="./images/waze.png" alt="Waze Live Map">
+				</a>
+			</div>
+			<div class="user-info-dropdown">
+				<div class="dropdown">
+					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon">
+							<img src="./images/johndoe.png" alt="">
+						</span>
+						<span class="user-name">Yossi Zaguri</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
+						<a class="dropdown-item" href="#"><i class="dw dw-help"></i> Help</a>
+						<a class="dropdown-item" href="#"><i class="dw dw-logout"></i> Log Out</a>
+					</div>
+				</div>
+			</div>
+			<div class="github-link">
+				<a href="https://github.com/bmitay4/BigData" target="_blank"><img src="./images/github.svg" alt=""></a>
+			</div>
+		</div>
+	</div>
+	<div class="main-container">
+		<div class="pd-ltr-20">
+			<div class="row">
+				<div class="col-xl-5 mb-30">
+					<div class="card-box pd-20 height--p">
+						<div class="row align-items-center">
+							<div class="col-md-4">
+								<img src="./images/banner-img.png" alt="">
+							</div>
+							<div class="col-md-8">
+								<h5 class="font-13 weight-500 mb-10 text-capitalize">
+									Dear Manager!
+								</h5>
+								<p class="font-13">Welcome to the dashboard of Route 7</p>
+								<p>Our technical staff is available 24/7 for any malfunction or problem that arises in
+									the system, by calling &nbsp;<i class="icon-copy fa fa-phone"
+										aria-hidden="true"></i> * 6118 </p>
+								<p>We wish you a pleasant use of the system and have a great day &nbsp;<i
+										class="icon-copy fa fa-smile-o" aria-hidden="true"></i></p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-5 mb-30">
+					<div class="card-box pd-20 height-60-p">
+						<div class="row align-items-center">
+							<div id="chart8"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-2 mb-30">
+					<div class="card-box pd-20 height-60-p">
+						<div class="row align-items-center">
+							<div id="chart1"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="card widget-card-1">
+						<div class="card-block-small">
+							<span class="text-c-blue f-w-600">Real-time display of road traffic</span>
+							<i class="icofont icofont-map-pins bg-c-blue card1-icon"></i>
+							<div class="widget-card-2">
+								<div class="card-block table-border-style">
+									<div class="table-responsive">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th scope="col">#</th>
+													<th scope="col">Interchange 1</th>
+													<th scope="col">Interchange 2</th>
+													<th scope="col">Interchange 3</th>
+													<th scope="col">Interchange 4</th>
+													<th scope="col">Interchange 5</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">Cars</th>
+													<td> <button type="button"
+															class="btn btn-primary btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="left"
+															title="Type: Family, Entry: 1, Time:13:43">
+															<i class="icofont icofont-car-alt-3"></i>
+														</button>
+														<button type="button"
+															class="btn btn-danger btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="top"
+															title=".icofont icofont-search-alt-2">
+															<i class="icofont icofont-bus-alt-2"></i>
+														</button>
+														<button type="button"
+															class="btn btn-warning btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="right"
+															title=".icofont-refresh">
+															<i class="icofont icofont-taxi"></i>
+														</button>
+														<button type="button"
+															class="btn btn-info btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="top"
+															title=".icofont-print">
+															<i class="icofont icofont-articulated-truck"></i>
+														</button>
+														<button type="button"
+															class="btn btn-success btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="bottom"
+															title=".icofont-paper-plane">
+															<i class="icofont icofont-motor-bike"></i>
+														</button>
+														<button type="button"
+															class="btn btn-primary btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="left"
+															title="Type: Family, Entry: 1, Time:13:43">
+															<i class="icofont icofont-car-alt-3"></i>
+														</button>
+														<button type="button"
+															class="btn btn-danger btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="top"
+															title=".icofont icofont-search-alt-2">
+															<i class="icofont icofont-bus-alt-2"></i>
+														</button>
+														<button type="button"
+															class="btn btn-warning btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="right"
+															title=".icofont-refresh">
+															<i class="icofont icofont-taxi"></i>
+														</button>
+														<button type="button"
+															class="btn btn-info btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="top"
+															title=".icofont-print">
+															<i class="icofont icofont-articulated-truck"></i>
+														</button>
+														<button type="button"
+															class="btn btn-success btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="bottom"
+															title=".icofont-paper-plane">
+															<i class="icofont icofont-motor-bike"></i>
+														</button>
+													</td>
+													<td>[ ]</td>
+													<td> <button type="button"
+															class="btn btn-danger btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="top"
+															title=".icofont icofont-search-alt-2">
+															<i class="icofont icofont-bus-alt-2"></i>
+														</button>
+														<button type="button"
+															class="btn btn-warning btn-icon waves-effect waves-light"
+															data-toggle="tooltip" data-placement="right"
+															title=".icofont-refresh">
+															<i class="icofont icofont-taxi"></i>
+														</button>
+													</td>
+													<td>[ ]</td>
+													<td>[ ]</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div>
+								<span class="f-left m-t-10 text-muted">
+									<i class="text-c-blue f-16 icofont icofont-info m-r-10"></i>The information is
+									updated
+									every 15 seconds</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-4">
+					<div class="card widget-card-1">
+						<div class="card-block-small">
+							<span class="text-c-blue f-w-600">Vehicles on the road</span>
+							<i class="icofont icofont-road bg-c-blue card1-icon"></i>
+							<h4>
+								<%= carsCount %>
+							</h4>
+							<div>
+								<span class="f-left m-t-10 text-muted">
+									<i class="text-c-blue f-16 icofont icofont-info m-r-10"></i>Currently
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="card widget-card-1">
+						<div class="card-block-small">
+							<span class="text-c-blue f-w-600">Expect road maintenance</span>
+							<i class="icofont icofont-barricade bg-c-blue card1-icon"></i>
+							<h6>
+								<p></p>No infrastructure works are expected soon
+							</h6>
+						</div>
+					</div>
+					<div class="card widget-card-1">
+						<div class="card-block-small">
+							<span class="text-c-blue f-w-600">Open tasks</span>
+							<i class="icofont icofont-tasks bg-c-blue card1-icon"></i>
+							<h6>
+								<p></p>
+								<p align="left"><i class="icofont icofont-tack-pin"></i>Recruitment to the customer service team</p>
+								<p align="left"><i class="icofont icofont-tack-pin"></i>On 04/08/2021 Meeting with the CEO</p>
+								<p align="left"><i class="icofont icofont-tack-pin"></i>Upgrading the website's cloud services</p>
+							</h6>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-8">
+					<div class="card widget-card-1">
+						<div class="card-block-small">
+							<span class="text-c-blue f-w-600">Vehicles interchanges entry and exit prediction
+								table</span>
+							<div class="card-block-small">
+								<form action="/" method="get">
+									<div class="form-group row">
+										<div class="col-sm-2.5">
+											<caption><b>Entry Interchange</b></caption>
+											<select name="select" class="form-control">
+												<option selected="selected">
+													<%= predict_values[0] %>
+												</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+										</div>
+										<div class="col-sm-3">
+											<caption><b>Vehicle Type</b></caption>
+											<select name="select" class="form-control">
+												<option selected="selected">
+													<%= predict_values[1] %>
+												</option>
+												<option value="Family">Family</option>
+												<option value="Truck">Truck</option>
+												<option value="Taxi">Taxi</option>
+												<option value="Bus">Bus</option>
+												<option value="Motorcycle">Motorcycle</option>
+											</select>
+										</div>
+										<div class="col-sm-3">
+											<caption><b>Day</b></caption>
+											<select name="select" class="form-control">
+												<option selected="selected">
+													<%= predict_values[2] %>
+												</option>
+												<option value="Sunday">Sunday</option>
+												<option value="Monday">Monday</option>
+												<option value="Tuesday">Tuesday</option>
+												<option value="Wednesday">Wednesday</option>
+												<option value="Thursday">Thursday</option>
+												<option value="Friday">Friday</option>
+												<option value="Saturday">Saturday</option>
+											</select>
+										</div>
+										<div class="col-sm-2">
+											<caption><b>Time</b></caption>
+											<input type="text" name="time" class="form-control time-picker"
+												value=<%= predict_values[3] %>>
+										</div>
+										<button class="btn btn-primary btn-round">Submit</button>
+									</div>
+								</form>
+							</div>
+							<i class="icofont icofont-chart-bar-graph bg-c-blue card1-icon"></i>
+							<div class="widget-card-2">
+								<div class="card-block table-border-style">
+									<div class="table-responsive">
+										<%- include ('./predicts.ejs', {cell1_1:preditc_table[0],
+											cell1_2:preditc_table[1], cell1_3:preditc_table[2],
+											cell1_4:preditc_table[3], cell1_5:preditc_table[4],
+											cell2_1:preditc_table[5], cell2_2:preditc_table[6],
+											cell2_3:preditc_table[7], cell2_4:preditc_table[8],
+											cell2_5:preditc_table[9], cell3_1:preditc_table[10],
+											cell3_2:preditc_table[11], cell3_3:preditc_table[12],
+											cell3_4:preditc_table[13], cell3_5:preditc_table[14],
+											cell4_1:preditc_table[15], cell4_2:preditc_table[16],
+											cell4_3:preditc_table[17], cell4_4:preditc_table[18],
+											cell4_5:preditc_table[19], cell5_1:preditc_table[20],
+											cell5_2:preditc_table[21], cell5_3:preditc_table[22],
+											cell5_4:preditc_table[23], cell5_5:preditc_table[24]}) %>
+									</div>
+								</div>
+							</div>
+							<div>
+								<span class="f-left m-t-10 text-muted">
+									<i class="text-c-blue f-16 icofont icofont-info m-r-10"></i>Possible Estimate,
+									E&OE
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-wrap pd-20 mb-20 card-box"></div>
+		</div>
+	</div>
+
+	<!-- js -->
+	<script src="./scripts/core.js"></script>
+	<script src="./scripts/script.min.js"></script>
+	<script src="./scripts/process.js"></script>
+	<script src="./scripts/layout-settings.js"></script>
+	<script src="./src/plugins/highcharts-6.0.7/code/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	<script src="./src/plugins/highcharts-6.0.7/code/highcharts-more.js"></script>
+	<script src="./scripts/highchart-setting.js"></script>
+	<script src="./src/plugins/apexcharts/apexcharts.min.js"></script>
+	<script src="./scripts/apexcharts-setting.js"></script>
+	<script src="./src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="./src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="./src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="./src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+	<script src="./scripts/dashboard.js"></script>
+</body>
+
+</html>
